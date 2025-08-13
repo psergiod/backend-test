@@ -57,7 +57,7 @@ namespace Salon.Application.Tests.Users.Mappers
                 Password = "NewPassword",
                 Name = "New User",
                 Email = "newuser@example.com",
-                Role = Role.User
+                Role = Role.Employee
             };
 
             // Act
@@ -70,7 +70,7 @@ namespace Salon.Application.Tests.Users.Mappers
             result.Password.Should().Be("NewPassword");
             result.Name.Should().Be("New User");
             result.Email.Should().Be("newuser@example.com");
-            result.Role.Should().Be(Role.User);
+            result.Role.Should().Be(Role.Employee);
         }
 
         [Test]
@@ -125,7 +125,7 @@ namespace Salon.Application.Tests.Users.Mappers
                 Password = "TestPassword",
                 Name = "Test User",
                 Email = "test@example.com",
-                Role = Role.User
+                Role = Role.Employee
             };
 
             // Act
@@ -147,7 +147,7 @@ namespace Salon.Application.Tests.Users.Mappers
                 Password = "TestPassword",
                 Name = "Test User",
                 Email = "test@example.com",
-                Role = Role.User
+                Role = Role.Employee
             };
 
             // Act

@@ -58,7 +58,7 @@ namespace Salon.Application.Tests.ServiceOrders.Services
             var result = await service.CreateOrder(command);
 
             result.Error.Should().BeFalse();
-            result.StatusCode.Should().Be(HttpStatusCode.Created);
+            result.StatusCode.Should().Be((int)HttpStatusCode.Created);
         }
 
         [Test]
@@ -83,7 +83,7 @@ namespace Salon.Application.Tests.ServiceOrders.Services
             var result = await service.GetAllOrders();
 
             result.Error.Should().BeFalse();
-            result.StatusCode.Should().Be(HttpStatusCode.OK);
+            result.StatusCode.Should().Be((int)HttpStatusCode.OK);
             result.Value.Should().NotBeNull();
         }
 
@@ -101,7 +101,7 @@ namespace Salon.Application.Tests.ServiceOrders.Services
             var result = await service.GetOrderByIdAsync(orderEntity.Id);
 
             result.Error.Should().BeFalse();
-            result.StatusCode.Should().Be(HttpStatusCode.OK);
+            result.StatusCode.Should().Be((int)HttpStatusCode.OK);
         }
 
         [Test]
@@ -118,7 +118,7 @@ namespace Salon.Application.Tests.ServiceOrders.Services
             var result = await service.DeleteOrder(orderEntity.Id);
 
             result.Error.Should().BeFalse();
-            result.StatusCode.Should().Be(HttpStatusCode.OK);
+            result.StatusCode.Should().Be((int)HttpStatusCode.OK);
         }
 
         [Test]

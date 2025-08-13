@@ -19,8 +19,8 @@ namespace Salon.Application.Tests.ServiceOrders.Fakes
             return new ServiceOrder()
                 .InformClient(ClientId1)
                 .InformDate(DateTime.UtcNow.Date)
-                .InformPaymentMethod(PaymentMethod.Credit)
-                .AddItem(new ItemOrder(ItemFake.GetItemBrazilianBlowout(), 1));
+                .InformPaymentMethod(PaymentMethod.Cash)
+                .AddItem(new ItemOrder { ItemId = ItemFake.GetItemBrazilianBlowout().Id, Value = 100.0M });
         }
 
         public static ServiceOrder GetServiceOrderEntityWithId()
@@ -36,14 +36,14 @@ namespace Salon.Application.Tests.ServiceOrders.Fakes
             {
                 ClientId = ClientId1.ToString(),
                 Date = DateTime.UtcNow.Date,
-                PaymentMethod = PaymentMethod.Credit,
+                PaymentMethod = PaymentMethod.Cash,
                 Obs = "Test observation",
                 Items = new List<ItemOrderDto>
                 {
                     new ItemOrderDto
                     {
                         Id = ItemFake.GetItemBrazilianBlowout().Id.ToString(),
-                        Amount = 1
+                        Value = 100.0M
                     }
                 }
             };
@@ -55,7 +55,7 @@ namespace Salon.Application.Tests.ServiceOrders.Fakes
             {
                 ClientId = "", // Invalid empty client ID
                 Date = DateTime.MinValue,
-                PaymentMethod = PaymentMethod.Credit,
+                PaymentMethod = PaymentMethod.Cash,
                 Items = new List<ItemOrderDto>()
             };
         }
@@ -65,8 +65,8 @@ namespace Salon.Application.Tests.ServiceOrders.Fakes
             var order = new ServiceOrder()
                 .InformClient(ClientId2)
                 .InformDate(DateTime.UtcNow.Date.AddDays(-1))
-                .InformPaymentMethod(PaymentMethod.Debit)
-                .AddItem(new ItemOrder(ItemFake.GetItemBrazilianBlowout(), 2));
+                .InformPaymentMethod(PaymentMethod.Pix)
+                .AddItem(new ItemOrder { ItemId = ItemFake.GetItemBrazilianBlowout().Id, Value = 200.0M });
             order.Id = IdServiceOrder2;
             return order;
         }
