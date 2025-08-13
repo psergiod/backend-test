@@ -26,7 +26,6 @@ namespace Salon.Infra
             serviceCollection.AddSingleton<IMongoClient, MongoClient>(sp =>
             {
                 var clientSettings = MongoClientSettings.FromConnectionString(configuration.GetConnectionString(ConnectionStringsConstants.MONGODB));
-                clientSettings.LinqProvider = MongoDB.Driver.Linq.LinqProvider.V3;
                 return new MongoClient(clientSettings);
             });
 

@@ -32,13 +32,9 @@ namespace Salon.Infra.Repositories
             Expression<Func<TEntity, TSelect>> selector,
             int? top = null)
         {
-            IMongoQueryable<TEntity> collectionQueryable = _collection.AsQueryable();
-            IMongoQueryable<TEntity> query;
+            var collectionQueryable = _collection.AsQueryable();
+            var query = collectionQueryable.Where(where);
             Expression<Func<TEntity, bool>> hideRemovedCriteria = x => !x.Removed;
-
-            query =
-                collectionQueryable
-                 .Where(where);
 
             if (!_showRemoved)
                 query = query.Where(hideRemovedCriteria);
