@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salon.Domain.Tests", "Salon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salon.Infra.Tests", "Salon.Infra.Tests\Salon.Infra.Tests.csproj", "{48D23F20-BB4D-45F8-A490-A928272BA30C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalonApi.Tests", "SalonApi.Tests\SalonApi.Tests.csproj", "{76470E82-9EC3-4BC5-BD55-EE28ECE1AA5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{48D23F20-BB4D-45F8-A490-A928272BA30C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48D23F20-BB4D-45F8-A490-A928272BA30C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48D23F20-BB4D-45F8-A490-A928272BA30C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76470E82-9EC3-4BC5-BD55-EE28ECE1AA5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76470E82-9EC3-4BC5-BD55-EE28ECE1AA5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76470E82-9EC3-4BC5-BD55-EE28ECE1AA5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76470E82-9EC3-4BC5-BD55-EE28ECE1AA5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
