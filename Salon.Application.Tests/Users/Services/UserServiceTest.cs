@@ -46,6 +46,7 @@ namespace Salon.Application.Tests.Users.Services
         public void TearDown()
         {
             _mongoDbContext.Destroy();
+            (_serviceProvider as IDisposable)?.Dispose();
         }
 
         [Test]

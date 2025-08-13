@@ -18,7 +18,6 @@ namespace Salon.Infra.Tests.MongoDbContext
             _dbName = string.IsNullOrEmpty(dbName) ? $"test_{Guid.NewGuid()}" : dbName;
 
             var clientSettings = MongoClientSettings.FromConnectionString(string.Format(CONNECTIONSTRING, _dbName));
-            clientSettings.LinqProvider = MongoDB.Driver.Linq.LinqProvider.V3;
 
             MongoClient = new MongoClient(clientSettings);
             MongoClient.GetDatabase(string.Format(CONNECTIONSTRING, _dbName));
